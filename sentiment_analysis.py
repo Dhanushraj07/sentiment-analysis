@@ -47,9 +47,14 @@ def sentiment_analyse(sentiment_text):
     else:
         print("Neutral Sentiment")
     print(max(pos,neu,neg))
+    labels = ['Positive', 'Negative', 'Neutral']
+    values = [pos, neg, neu]
+    plt.figure(figsize=(6, 4))
+    plt.bar(labels, values, color=['green', 'red', 'gray'])
+    plt.xlabel('Sentiment')
+    plt.ylabel('Score')
+    plt.title('Sentiment Analysis Results')
+    plt.ylim(0, 1)
+    plt.savefig("sentiment_chart.png")  # Save the plot as an image
+    plt.show()
 sentiment_analyse(cleaned_text)
-# fig,axl = plt.subplots()
-# axl.bar(c.keys(),c.values())
-# fig.autofmt_xdate()
-# plt.savefig("barchart.png")
-# plt.show()

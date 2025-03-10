@@ -28,6 +28,7 @@
  'autonomous': 'independent',
  'awed': 'fearful',
  'awkward': 'embarrassed',
+ 'bad':bad,
  'beaten down': 'powerless',
  'beatific': 'happy',
  'belonging': 'attached',
@@ -178,6 +179,7 @@
  'furious': 'angry',
  'gallant': 'fearless',
  'genial': 'happy',
+ 'good':'good'
  'glad': 'happy',
  'gleeful': 'happy',
  'gloomy': 'sad',

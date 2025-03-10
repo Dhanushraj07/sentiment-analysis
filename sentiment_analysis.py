@@ -18,6 +18,7 @@ for word in tokenization:
 print("The final words are : ",final_words)
 
 emotions_list = []
+w = []
 with open('emotions.txt','r') as file:
     for line in file:
         clear_line = line.replace('\n','').replace(',','').replace("'",'').strip()
@@ -25,7 +26,9 @@ with open('emotions.txt','r') as file:
         #print("Word :",word,"         Emotion :",emotion)
         if word in final_words:
             emotions_list.append(emotion)
+            w.append(word)
 print("Emotions in this file are : ",emotions_list)
+print(w)
 
 c = Counter(emotions_list)
 print(c)
@@ -35,15 +38,18 @@ def sentiment_analyse(sentiment_text):
     print(score)
     pos = score['pos']
     neg = score['neg']
+    neu = score['neu']
+
     if neg>pos:
         print("Negative Sentiment")
     elif pos>neg:
         print("Positive Sentiment")
     else:
         print("Neutral Sentiment")
+    print(max(pos,neu,neg))
 sentiment_analyse(cleaned_text)
-fig,axl = plt.subplots()
-axl.bar(c.keys(),c.values())
-fig.autofmt_xdate()
-plt.savefig("barchart.png")
-plt.show()
+# fig,axl = plt.subplots()
+# axl.bar(c.keys(),c.values())
+# fig.autofmt_xdate()
+# plt.savefig("barchart.png")
+# plt.show()
